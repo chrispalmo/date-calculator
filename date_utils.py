@@ -1,7 +1,7 @@
 def isLeapYear(year):
     "(year: int) => bool"
     # https://simple.wikipedia.org/wiki/Century_leap_year
-    return year % 4 == 0 & (year % 400 == 0 | year % 100 != 0)
+    return year % 4 == 0 and (year % 400 == 0 or year % 100 != 0)
 
 def daysInMonth(month, year):
     "(month: int, year: int) => int"
@@ -16,7 +16,7 @@ def parseDateString(dateString):
         day = int(dayMonthYear[0])
         month = int(dayMonthYear[1])
         year = int(dayMonthYear[2])
-        if (0 < day <= daysInMonth(month, year)) & (0 < month <= 12):
+        if (0 < day <= daysInMonth(month, year)) and (0 < month <= 12):
             return {
                 "day": day,
                 "month": month,
