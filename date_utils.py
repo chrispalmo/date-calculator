@@ -28,6 +28,7 @@ def parseDateString(dateString):
         raise ValueError(ERROR_MESSAGE)
 
 def daysFromEpoch(dateString):
+    "(dateString: 'dd/mm/yyyy') => int"
     date = parseDateString(dateString)
     totalDays = date["day"] - 1
     for year in range(date["year"] + 1):
@@ -41,4 +42,5 @@ def daysFromEpoch(dateString):
     return totalDays
 
 def daysBetween(dateString1, dateString2):
+    "(dateString1: 'dd/mm/yyyy', dateString2: 'dd/mm/yyyy) => int"
     return daysFromEpoch(dateString2) - daysFromEpoch(dateString1)
