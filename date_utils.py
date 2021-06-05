@@ -43,4 +43,6 @@ def daysFromEpoch(dateString):
 
 def daysBetween(dateString1, dateString2):
     "(dateString1: 'dd/mm/yyyy', dateString2: 'dd/mm/yyyy) => int"
-    return daysFromEpoch(dateString2) - daysFromEpoch(dateString1)
+    delta = daysFromEpoch(dateString2) - daysFromEpoch(dateString1)
+    # The first and the last day are considered partial days and never counted
+    return delta - 1 if delta > 0 else delta + 1 if delta < 0 else delta
